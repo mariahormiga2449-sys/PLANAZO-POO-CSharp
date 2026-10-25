@@ -49,3 +49,24 @@ Los datos se guardan en memoria durante la ejecución. Al cerrar el programa, la
 
 ## Autor
 Maria Hormiga
+## Clases y relaciones
+
+La clase `Evento` contiene los datos comunes de los eventos. `Cine`, `Concierto`, `Taller` y `EventoDeportivo` heredan de ella y calculan el precio final según su tipo.
+
+La clase `Usuario` guarda los datos de las personas que reservan. `Reserva` relaciona al usuario con el evento y registra las entradas, el valor total y el estado. `GestorReservas` administra los eventos, usuarios y reservas.
+
+## Otros conceptos de POO
+
+Los constructores permiten inicializar los objetos. El encapsulamiento ayuda a controlar la modificación de los datos. Las listas `List<T>` almacenan los eventos, usuarios y reservas, mientras que las validaciones y excepciones permiten controlar errores y entradas incorrectas.
+
+## Pregunta de sustentación
+
+**¿Por qué utilicé una clase abstracta `Evento`?**
+
+La utilicé porque todos los eventos comparten características, como el nombre, la fecha y el precio base. Así evito repetir código y cada tipo puede calcular su precio de manera diferente. Por ejemplo, un concierto aumenta su precio un 15 % y un taller aplica un descuento del 10 %. Si necesito agregar otro tipo de evento, puedo crear una clase que herede de `Evento`, como hice con `EventoDeportivo`, sin cambiar las clases existentes.
+
+## Pruebas realizadas
+
+Se probaron las reservas válidas, las cantidades negativas o iguales a cero, los cupos insuficientes, la cancelación de reservas, las consultas de eventos inexistentes y los precios finales de los diferentes tipos de eventos.
+
+Las capturas de estas pruebas están en la carpeta `Capturas`.
